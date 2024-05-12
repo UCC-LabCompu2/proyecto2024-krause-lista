@@ -1,7 +1,7 @@
 > ## Autor
 > **Lista, Joaquin**
->> **Krause, Augusto**
-
+>**Krause, Augusto**
+>
 >
 > ## Descripción
 >
@@ -10,8 +10,8 @@
 > | Email              |    Autores     |
 > |--------------------|----------------| 
 > | 2208451@ucc.edu.ar | Lista Joaquin  |
-  |--------------------|----------------| 
-> | 2309051@ucc.edu.ar | Augusto Krause |
+> |--------------------|----------------| 
+> | 2202785@ucc.edu.ar | Krause Augusto |
 >
 >  ### Tecnologías Usadas: 
 >   - HTML5
