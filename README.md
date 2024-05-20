@@ -22,15 +22,15 @@
 | 2208451@ucc.edu.ar | Joaquín Lista  |
 | 2202785@ucc.edu.ar | Augusto Krause |
 
-## Tecnologías Usadas
+### Tecnologías Usadas
 
-- HTML5
-- CSS3
+- **HTML5**
+- **CSS3**
 
-## Link al Proyecto
+### Link al Proyecto
 
 [Proyecto 2024](https://ucc-labcompu2.github.io/proyecto2024-krause-lista/index.html)
 
-## Link a GitHub Pages
+### Link a GitHub Pages
 
 [GitHub Pages - Proyecto 2024](https://ucc-labcompu2.github.io/proyecto2024-krause-lista/)
