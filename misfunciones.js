@@ -19,7 +19,14 @@ function animarLogo() {
   if (x > canvas.width) x = 0;
 }
 
-larprecios = () => {
+/**
+ * Calcula el precio segun cantidad de adultos y niños, ademas de blanquear y alertar el ingreso de un caracter incorrecto.
+ * @method calcularprecios
+ * @param {string} adultos - Numero de adultos ingresados.
+ * @param {string} niños - Numero de niños ingresados.
+ * @return {number} El precio total calculado.
+ */
+var calcularprecios = () => {
   var num1 = document.getElementById("adultos").value;
   var num2 = document.getElementById("niños").value;
 
