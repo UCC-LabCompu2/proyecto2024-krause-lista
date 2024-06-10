@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="UTF-8" />
-    <title>MdS: Departamentos</title>
-    <meta content="Augusto Krause, Joaquín Lista" name="author" />
+    <meta content="Augusto Krause, Joaquin Lista" name="author" />
     <meta
-      content="Pagina de alquiler de departamentos en la costa argentina"
-      name="description"
-    />
-    <meta
-      content="proyecto, alquiler, página, Las Grutas, departamento, playa"
+      content="proyecto, alquiler, pagina, las grutas, departamento, playa"
       name="keywords"
     />
+    <title>MdS: Reserva</title>
     <link rel="stylesheet" href="estilo.css" type="text/css" />
     <link rel="shortcut icon" href="Images/favmds.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Gugi&family=Poetsen+One&family=Sedan+SC&display=swap"
       rel="stylesheet"
     />
+    <script type="text/javascript" src="misfunciones.js"></script>
   </head>
   <body>
     <header>
@@ -34,11 +31,11 @@
     <div>
       <h2 id="reserva">Reserva</h2>
       <p class="textoreserva">
-        Completa el siguiente formulario para realizar tu reserva.
+        Completa el siguiente formulario para realizar tu reserva
       </p>
       <p class="textoreserva">
-        Una vez enviado, se te enviará un email de confirmación y se te
-        contactará cuando se tenga información de una habitación disponible, con
+        Una vez enviado, se le enviara un email de confirmacion y se le
+        contactara cuando se tenga informacion de una habitacion disponible, con
         su determinado precio.
       </p>
     </div>
@@ -54,8 +51,8 @@
         />
       </p>
       <p>
-        <label for="apellido">Apellido: </label>
-        <input
+        <label for="apellido">Apellido: </label
+        ><input
           type="text"
           size="20"
           name="apellido"
@@ -64,32 +61,44 @@
         />
       </p>
       <p>
-        Sexo:
-        <label for="masculino">Masculino</label>
-        <input type="radio" name="sexo" value="masculino" id="masculino" />
-        <label for="femenino">Femenino</label>
+        Sexo: <label for="masculino"> Masculino </label
+        ><input type="radio" name="sexo" value="masculino" id="masculino" />
+        <label for="femenino"> Femenino</label>
         <input type="radio" name="sexo" value="femenino" id="femenino" />
       </p>
       <p>
-        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" />
-      </p>
-      <p>
-        <label for="dni">DNI:</label>
-        <input type="number" name="dni" placeholder="DNI" id="dni" />
-      </p>
-      <p>
-        <label for="telefono">Número de teléfono: </label>
+        <label for="fecha de nacimiento">Fecha Nacimiento:</label>
         <input
-          type="tel"
-          name="telefono"
-          placeholder="Número de teléfono"
-          id="telefono"
+          type="date"
+          name="fecha de nacimiento"
+          id="fecha de nacimiento"
         />
       </p>
       <p>
-        <label for="email">Email: </label>
+        <label for="dni"> DNI:</label>
         <input
+          type="text"
+          size="20"
+          name="dni"
+          placeholder="DNI"
+          id="dni"
+          onchange="ponerdni()"
+        />
+      </p>
+      <p>
+        <label for="numero_de_telefono">Numero de telefono: </label>
+        <input
+          type="text"
+          size="20"
+          name="telefono"
+          placeholder="Numero de telefono"
+          id="numero_de_telefono"
+          onchange="ponertelefono()"
+        />
+      </p>
+      <p>
+        <label for="email">Email: </label
+        ><input
           type="email"
           size="50"
           name="email"
@@ -98,26 +107,34 @@
         />
       </p>
       <p>
-        <label for="fecha_entrada">Fecha de Entrada:</label>
-        <input type="date" name="fecha_entrada" id="fecha_entrada" />
+        <label for="fecha de entrada">Fecha de Entrada:</label>
+        <input type="date" name="fecha de entrada" id="fecha de entrada" />
       </p>
       <p>
-        <label for="fecha_salida">Fecha de Salida:</label>
-        <input type="date" name="fecha_salida" id="fecha_salida" />
+        <label for="fecha de salida">Fecha de Salida:</label>
+        <input type="date" name="fecha de salida" id="fecha de salida" />
       </p>
       <p>
-        <label for="habitacion_deseada">Habitación Deseada:</label>
-        <select name="habitacion_deseada" id="habitacion_deseada">
-          <option value="6 personas">6 personas</option>
-          <option value="5 personas">5 personas</option>
-          <option value="4 personas">4 personas</option>
-          <option value="3 personas">3 personas</option>
-          <option value="1-2 personas">1-2 personas</option>
-        </select>
+        <label for="adultos">Adultos:</label>
+        <input
+          id="adultos"
+          type="text"
+          name="cantadultos"
+          onchange="calcularprecios()"
+        />
+        <label for="niños">Niños (menores 12 años):</label>
+        <input
+          id="niños"
+          type="text"
+          name="cantniños"
+          onchange="calcularprecios()"
+        />
+        <label for="totalprecio">Precio final:</label>
+        <input id="totalprecio" type="text" name="preciototal" disabled />
       </p>
       <p>
-        <label for="consultas">Consultas: </label>
-        <textarea name="consultas" maxlength="150" id="consultas"></textarea>
+        <label for="consultas">Consultas: </label
+        ><textarea maxlength="150" id="consultas"></textarea>
       </p>
       <p>
         <button type="button">Enviar</button>
@@ -125,13 +142,11 @@
     </form>
     <footer>
       <div class="footertexto">
-        Contacto:
-        <a href="tel:+5492964578953">+54 9 2964 57 8953</a> /
-        <a href="tel:+5492964452908">+54 9 2964 45 2908</a>
+        Contacto: +54 9 2964 57 8953/+54 9 2964 45 2908
       </div>
       <nav>
         <a href="https://www.ucc.edu.ar" target="_blank"
-          >Universidad Católica de Córdoba</a
+          >Universidad Catolica de Cordoba</a
         >
       </nav>
     </footer>

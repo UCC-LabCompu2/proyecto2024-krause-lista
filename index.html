@@ -18,8 +18,9 @@
       href="https://fonts.googleapis.com/css2?family=Gugi&family=Poetsen+One&family=Sedan+SC&display=swap"
       rel="stylesheet"
     />
+    <script type="text/javascript" src="misfunciones.js"></script>
   </head>
-  <body>
+  <body onload="setInterval(animarLogo, 10)">
     <header>
       <div>
         <h1 class="tituloheader">Mar del Sur</h1>
@@ -32,8 +33,12 @@
     </header>
     <div class="principal">
       <h2>Departamento Premium en la Playa</h2>
-      <img src="Images/logo-mar-del-sur.png" alt="Logo Mar del Sur" />
-      <a href="departamentos.html" class="boton">Saber mas</a>
+      <div class="canvas-container">
+        <canvas id="myCanvas" width="1000" height="450">
+          Tu navegador no soporta el tag de HTML5 canvas.
+        </canvas>
+      </div>
+      <a href="departamentos.html" class="boton">Saber más</a>
     </div>
     <div class="nosotros">
       <h2>Nosotros</h2>
@@ -60,13 +65,13 @@
       </div>
       <div class="imagen">
         <h3>Cochera</h3>
-        <p>Espacio para 2 vehiculos</p>
+        <p>Espacio para 2 vehículos</p>
         <img src="Images/playa.jpg" alt="Playa" />
       </div>
     </div>
-    <canvas></canvas>
+
     <div class="ubicacion">
-      <h2>Ubicacion en Google Maps</h2>
+      <h2>Ubicación en Google Maps</h2>
       <p>
         Estamos ubicados en la calle Punta Villarino a pocos pasos de las
         tranquilas aguas del Atlántico. Ven a visitarnos y disfruta de la mejor
@@ -88,7 +93,7 @@
       </div>
       <nav>
         <a href="https://www.ucc.edu.ar" target="_blank"
-          >Universidad Catolica de Cordoba</a
+          >Universidad Católica de Córdoba</a
         >
       </nav>
     </footer>

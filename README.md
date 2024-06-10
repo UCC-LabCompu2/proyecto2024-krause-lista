@@ -34,3 +34,10 @@
 ### Link a GitHub Pages
 
 [GitHub Pages - Proyecto 2024](https://ucc-labcompu2.github.io/proyecto2024-krause-lista/)
+
+<body onload="setInterval(animarLogo, 10)"></body>
+      <body>
+        <canvas id="myCanvas" class="ejer" width="1000px" height="500px">
+          Tu navegador no soporta el tag de HTML5 canvas.
+        </canvas>
+      </body>
