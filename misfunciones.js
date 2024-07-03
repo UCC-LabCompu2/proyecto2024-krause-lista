@@ -1,80 +1,44 @@
-// misfunciones.js
-let x = 0;
-const dx = 2;
+const enviarFormulario = () => {
+  const nombre = document.getElementById("nombre").value;
+  const apellido = document.getElementById("apellido").value;
+  const sexo = document.querySelector('input[name="sexo"]:checked').value;
+  const fechaNacimiento = document.getElementById("fecha_de_nacimiento").value;
+  const dni = document.getElementById("dni").value;
+  const telefono = document.getElementById("numero_de_telefono").value;
+  const email = document.getElementById("email").value;
+  const fechaEntrada = document.getElementById("fecha_de_entrada").value;
+  const fechaSalida = document.getElementById("fecha_de_salida").value;
+  const adultos = document.getElementById("adultos").value;
+  const niños = document.getElementById("niños").value;
+  const consultas = document.getElementById("consultas").value;
 
-function animarLogo() {
-  var canvas = document.getElementById("myCanvas");
-  var ctx = canvas.getContext("2d");
+  const fechaEntradaDate = new Date(fechaEntrada);
+  const fechaSalidaDate = new Date(fechaSalida);
+  const noches = (fechaSalidaDate - fechaEntradaDate) / (1000 * 60 * 60 * 24);
 
-  canvas.width = canvas.width; // Limpiar el canvas
-
-  var img = new Image();
-  img.src = "Images/logo-mar-del-sur.png";
-
-  img.onload = function () {
-    ctx.drawImage(img, x, 100);
-  };
-
-  x += dx;
-  if (x > canvas.width) x = 0;
-}
-
-/**
- * Calcula el precio segun cantidad de adultos y niños, ademas de blanquear y alertar el ingreso de un caracter incorrecto.
- * @method calcularprecios
- * @param {string} adultos - Numero de adultos ingresados.
- * @param {string} niños - Numero de niños ingresados.
- * @return {number} El precio total calculado.
- */
-var calcularprecios = () => {
-  var num1 = document.getElementById("adultos").value;
-  var num2 = document.getElementById("niños").value;
-
-  if (isNaN(num1) || isNaN(num2)) {
-    alert("Por favor, ingresa solo números.");
-    document.getElementById("adultos").value = "";
-    document.getElementById("niños").value = "";
-    document.getElementById("preciototal").value = "";
-  }
-  if (num1 < 0 || num2 < 0) {
-    alert("Por favor, ingresa solo números positivos.");
-    document.getElementById("adultos").value = "";
-    document.getElementById("niños").value = "";
-    document.getElementById("preciototal").value = "";
+  if (isNaN(noches) || noches <= 0) {
+    alert("Por favor, ingresa fechas válidas.");
+    return false;
   }
 
-  let adultos = Number(num1);
-  let niños = Number(num2);
+  const totalPrecio = (adultos * 70000 + niños * 50000) * noches;
 
-  let totalPrecio = adultos * 70000 + niños * 50000;
+  const parametros = new URLSearchParams({
+    nombre,
+    apellido,
+    sexo,
+    fechaNacimiento,
+    dni,
+    telefono,
+    email,
+    fechaEntrada,
+    fechaSalida,
+    adultos,
+    niños,
+    totalPrecio,
+    consultas,
+  });
 
-  document.getElementById("totalprecio").value = "$" + totalPrecio;
-};
-/**
- * Alerta y blanquea en caso de un dato mal ingresado en el campo de dni.
- * @method ponerdni
- * @param {string} dni - El valor del dni ingresado.
- * @return
- */
-let ponerdni = () => {
-  var dni = document.getElementById("dni").value;
-
-  if (isNaN(dni)) {
-    alert("Por favor, ingresa solo números.");
-    document.getElementById("dni").value = "";
-  }
-};
-/**
- * Alerta y blanquea en caso de un dato mal ingresado en el campo de numero de telefono.
- * @method ponertelefono
- * @param {string} numero_de_telefono - El numero de telefono ingresado.
- * @return
- */
-let ponertelefono = () => {
-  var numero_de_telefono = document.getElementById("numero_de_telefono").value;
-
-  if (isNaN(numero_de_telefono)) {
-    alert("Por favor, ingresa solo números.");
-    document.getElementById("numero_de_telefono").value = "";
-  }
+  window.location.href = `resumen.html?${parametros.toString()}`;
+  return false;
 };

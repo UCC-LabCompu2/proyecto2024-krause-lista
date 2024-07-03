@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta content="Augusto Krause, Joaquin Lista" name="author" />
+    <meta name="author" content="Augusto Krause, Joaquin Lista" />
     <meta
-      content="proyecto, alquiler, pagina, las grutas, departamento, playa"
       name="keywords"
+      content="proyecto, alquiler, pagina, las grutas, departamento, playa"
     />
     <title>MdS: Reserva</title>
     <link rel="stylesheet" href="estilo.css" type="text/css" />
@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Gugi&family=Poetsen+One&family=Sedan+SC&display=swap"
       rel="stylesheet"
     />
-    <script type="text/javascript" src="misfunciones.js"></script>
+    <script defer src="misfunciones.js"></script>
   </head>
   <body>
     <header>
@@ -27,19 +27,18 @@
         <a href="reserva.html" class="menu_header">Reserva</a>
       </nav>
     </header>
-    <div class="principalreserva"></div>
     <div>
       <h2 id="reserva">Reserva</h2>
       <p class="textoreserva">
         Completa el siguiente formulario para realizar tu reserva
       </p>
       <p class="textoreserva">
-        Una vez enviado, se le enviara un email de confirmacion y se le
-        contactara cuando se tenga informacion de una habitacion disponible, con
+        Una vez enviado, se le enviará un email de confirmación y se le
+        contactará cuando se tenga información de una habitación disponible, con
         su determinado precio.
       </p>
     </div>
-    <form id="formularioreserva">
+    <form id="formularioreserva" onsubmit="return enviarFormulario();">
       <p>
         <label for="nombre">Nombre: </label>
         <input
@@ -48,30 +47,46 @@
           name="nombre"
           placeholder="Nombre"
           id="nombre"
+          required
         />
       </p>
       <p>
-        <label for="apellido">Apellido: </label
-        ><input
+        <label for="apellido">Apellido: </label>
+        <input
           type="text"
           size="20"
           name="apellido"
           placeholder="Apellido"
           id="apellido"
+          required
         />
       </p>
       <p>
-        Sexo: <label for="masculino"> Masculino </label
-        ><input type="radio" name="sexo" value="masculino" id="masculino" />
+        Sexo:
+        <label for="masculino"> Masculino </label>
+        <input
+          type="radio"
+          name="sexo"
+          value="masculino"
+          id="masculino"
+          required
+        />
         <label for="femenino"> Femenino</label>
-        <input type="radio" name="sexo" value="femenino" id="femenino" />
+        <input
+          type="radio"
+          name="sexo"
+          value="femenino"
+          id="femenino"
+          required
+        />
       </p>
       <p>
-        <label for="fecha de nacimiento">Fecha Nacimiento:</label>
+        <label for="fecha_de_nacimiento">Fecha Nacimiento:</label>
         <input
           type="date"
           name="fecha de nacimiento"
-          id="fecha de nacimiento"
+          id="fecha_de_nacimiento"
+          required
         />
       </p>
       <p>
@@ -82,71 +97,72 @@
           name="dni"
           placeholder="DNI"
           id="dni"
-          onchange="ponerdni()"
+          required
         />
       </p>
       <p>
-        <label for="numero_de_telefono">Numero de telefono: </label>
+        <label for="numero_de_telefono">Numero de teléfono: </label>
         <input
           type="text"
           size="20"
           name="telefono"
-          placeholder="Numero de telefono"
+          placeholder="Numero de teléfono"
           id="numero_de_telefono"
-          onchange="ponertelefono()"
+          required
         />
       </p>
       <p>
-        <label for="email">Email: </label
-        ><input
+        <label for="email">Email: </label>
+        <input
           type="email"
           size="50"
           name="email"
           placeholder="email@dominio.com"
           id="email"
+          required
         />
       </p>
       <p>
-        <label for="fecha de entrada">Fecha de Entrada:</label>
-        <input type="date" name="fecha de entrada" id="fecha de entrada" />
+        <label for="fecha_de_entrada">Fecha de Entrada:</label>
+        <input
+          type="date"
+          name="fecha de entrada"
+          id="fecha_de_entrada"
+          required
+        />
       </p>
       <p>
-        <label for="fecha de salida">Fecha de Salida:</label>
-        <input type="date" name="fecha de salida" id="fecha de salida" />
+        <label for="fecha_de_salida">Fecha de Salida:</label>
+        <input
+          type="date"
+          name="fecha de salida"
+          id="fecha_de_salida"
+          required
+        />
       </p>
       <p>
         <label for="adultos">Adultos:</label>
-        <input
-          id="adultos"
-          type="text"
-          name="cantadultos"
-          onchange="calcularprecios()"
-        />
+        <input id="adultos" type="text" name="cantadultos" required />
         <label for="niños">Niños (menores 12 años):</label>
-        <input
-          id="niños"
-          type="text"
-          name="cantniños"
-          onchange="calcularprecios()"
-        />
+        <input id="niños" type="text" name="cantniños" required />
         <label for="totalprecio">Precio final:</label>
         <input id="totalprecio" type="text" name="preciototal" disabled />
       </p>
       <p>
-        <label for="consultas">Consultas: </label
-        ><textarea maxlength="150" id="consultas"></textarea>
+        <label for="consultas">Consultas: </label>
+        <textarea maxlength="150" id="consultas"></textarea>
       </p>
       <p>
-        <button type="button">Enviar</button>
+        <button type="submit">Enviar</button>
       </p>
     </form>
     <footer>
-      <div class="footertexto">
+      <div class="footertexto_reserva">
         Contacto: +54 9 2964 57 8953/+54 9 2964 45 2908
       </div>
       <nav>
         <a href="https://www.ucc.edu.ar" target="_blank"
-          >Universidad Catolica de Cordoba</a
+          >Universidad Católica de Córdoba</a
         >
       </nav>
     </footer>

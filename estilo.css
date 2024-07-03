@@ -1,3 +1,9 @@
+body {
+  background: linear-gradient(to right, #ffffff, #f1f1f1);
+  margin: 0;
+  padding: 0;
+}
+
 header {
   background-color: #01477d;
   display: flex;
@@ -7,17 +13,14 @@ header {
   padding: 20px;
   font-family: "Arial";
 }
+
 .tituloheader {
   display: flex;
   color: #dbeeff;
   align-items: center;
   font-family: "Poetsen One", sans-serif;
 }
-body {
-  background: linear-gradient(to right, #ffffff, #f1f1f1);
-  margin: 0;
-  padding: 0;
-}
+
 .principal {
   background: url("Images/background.jpeg") no-repeat center center/cover;
   color: #fff;
@@ -25,16 +28,25 @@ body {
   padding: 100px 100px;
   margin: 0;
 }
+
 .principal h2 {
   text-align: center;
   font-family: "Poetsen One", sans-serif;
   text-shadow: 2px 2px black;
 }
+
+#canvas-container {
+  -moz-box-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .boton {
   display: inline-block;
   padding: 10px 30px;
   margin-top: 20px;
-  margin-left: -27%;
   background-color: #ffffff;
   color: #000000;
   text-decoration: none;
@@ -43,15 +55,18 @@ body {
   text-align: center;
   box-shadow: 2px 2px #000000;
 }
+
 a {
   text-decoration: none;
   color: #dbeeff;
   font-weight: 600;
   padding-right: 20px;
 }
+
 a:hover {
   color: black;
 }
+
 footer {
   background-color: #01477d;
   display: flex;
@@ -62,6 +77,7 @@ footer {
   width: 100%;
   font-family: "Arial";
 }
+
 .footertexto {
   display: flex;
   color: #dbeeff;
@@ -69,78 +85,73 @@ footer {
   padding-left: 20px;
   font-family: "Arial";
 }
-.nosotros h2 {
+
+.nosotros h2,
+.ubicacion h2 {
   text-align: center;
   padding-top: 60px;
   text-shadow: 1px 2px #999;
   font-family: "Arial";
 }
-.nosotros p {
+
+.nosotros p,
+.ubicacion p {
   text-align: center;
   padding: 20px 30px 60px 30px;
   font-family: "Arial";
   font-style: italic;
 }
-.ubicacion h2 {
-  text-align: center;
-  text-shadow: 1px 2px #999;
-  font-family: "Arial";
-}
-.ubicacion p {
-  text-align: center;
-  padding: 20px 30px 20px 30px;
-  font-family: "Arial";
-  font-style: italic;
-}
+
 .ubicacion iframe {
   width: 100%;
   border: none;
   height: 450px;
   margin-top: 20px;
 }
+
 .imagenes {
   display: flex;
-  justify-content: space-around; /* Espacio igual entre los elementos */
-  align-items: center; /* Alinear los elementos en el centro verticalmente */
+  justify-content: space-around;
+  align-items: center;
   margin: 20px;
 }
 
 .imagen {
   position: relative;
-  width: 420px; /* Ancho fijo para todas las imágenes */
-  height: 200px; /* Alto fijo para todas las imágenes */
+  width: 420px;
+  height: 200px;
   text-align: center;
 }
 
 .imagen img {
-  width: 100%; /* Hacer que la imagen ocupe todo el ancho del contenedor */
-  height: 100%; /* Hacer que la imagen ocupe todo el alto del contenedor */
-  object-fit: cover; /* Asegurar que la imagen cubra todo el contenedor sin distorsión */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-top: 2px solid black;
 }
 
 .imagen h3 {
   position: absolute;
-  top: 10px; /* Ajustado para que el título esté más cerca del borde superior */
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   font-weight: bold;
   font-family: Cochin;
   text-shadow: 1px 1px #ffffff;
   font-size: 30px;
-  margin: 0; /* Eliminar margen predeterminado */
+  margin: 0;
 }
 
 .imagen p {
   position: absolute;
-  bottom: 10px; /* Ajustado para que el texto esté más cerca del borde inferior */
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   font-style: italic;
   font-size: 20px;
   font-family: Cochin;
   text-shadow: 1px 1px #ffffff;
-  margin: 0; /* Eliminar margen predeterminado */
+  margin: 0;
 }
 
 caption {
@@ -150,6 +161,7 @@ caption {
   padding-bottom: 20px;
   font-weight: bold;
 }
+
 table {
   border-collapse: collapse;
   width: 20%;
@@ -164,12 +176,14 @@ td {
   text-align: center;
   font-family: Arial;
 }
+
 .departamentos h2 {
   text-align: center;
   padding: 50px 10px 50px 10px;
   font-family: "Arial";
   text-shadow: 1px 2px #999;
 }
+
 .departamentos p {
   text-align: center;
   padding: 10px 10px 50px 10px;
@@ -179,10 +193,12 @@ td {
   margin-right: 10px;
   font-style: italic;
 }
+
 .dimagen {
   width: 100%;
   height: 800px;
 }
+
 .dp {
   text-align: center;
   padding: 50px 10px 50px 10px;
@@ -192,6 +208,7 @@ td {
   margin-right: 10px;
   font-style: italic;
 }
+
 #reserva {
   font-family: Arial;
   text-align: center;
@@ -200,6 +217,7 @@ td {
   font-size: 30px;
   text-shadow: 1px 2px #999;
 }
+
 .textoreserva {
   font-family: Arial;
   text-align: center;
@@ -208,16 +226,14 @@ td {
   font-size: 15px;
   font-style: italic;
 }
+
 #formularioreserva {
   font-family: Arial;
   text-align: center;
   padding: 10px 10px 10px 50px;
 }
+
 .principalreserva {
-  background: url("Images/background.jpeg") no-repeat center center/cover;
-  color: #fff;
-  padding: 100px 100px;
-  margin: 0;
-  height: 100px;
-  border-bottom: 3px solid black;
+  background-image: url("Images/background.jpeg");
+  background-size: cover;
 }

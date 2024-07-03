@@ -2,24 +2,19 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MdS: Departamentos</title>
-    <meta content="Augusto Krause, Joaquín Lista" name="author" />
+    <meta content="Augusto Krause, Joaquin Lista" name="author" />
     <meta
-      content="Pagina de alquiler de departamentos en la costa argentina"
-      name="description"
-    />
-    <meta
-      content="proyecto, alquiler, página, Las Grutas, departamento, playa"
+      content="proyecto, alquiler, pagina, las grutas, departamento, playa"
       name="keywords"
     />
+    <title>MdS: Departamentos</title>
     <link rel="stylesheet" href="estilo.css" type="text/css" />
     <link rel="shortcut icon" href="Images/favmds.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Gugi&family=Poetsen+One&family=Sedan+SC&display=swap"
       rel="stylesheet"
     />
-    <script type="text/javascript" src="misfunciones.js" defer></script>
+    <script type="text/javascript" src="Animacion_logo.js" defer></script>
   </head>
   <body onload="setInterval(animarLogo, 10)">
     <header>
@@ -34,7 +29,7 @@
     </header>
     <div class="principal">
       <h2>Departamento Premium en la Playa</h2>
-      <div class="canvas-container">
+      <div id="canvas-container">
         <canvas id="myCanvas" width="1000" height="450">
           Tu navegador no soporta el tag de HTML5 canvas.
         </canvas>
