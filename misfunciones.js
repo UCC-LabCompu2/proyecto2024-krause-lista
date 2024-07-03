@@ -1,3 +1,8 @@
+/**
+ * Recoge los datos del formulario de reserva, calcula el precio total y redirige a la página de resumen.
+ * @method enviarFormulario
+ * @returns {boolean} False para evitar el envío del formulario.
+ */
 const enviarFormulario = () => {
   const nombre = document.getElementById("nombre").value;
   const apellido = document.getElementById("apellido").value;

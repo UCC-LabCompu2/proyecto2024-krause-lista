@@ -1,3 +1,8 @@
+/**
+ * Valida los datos del formulario de reserva.
+ * @method validateForm
+ * @returns {boolean} False si hay algún error de validación, True en caso contrario.
+ */
 const validateForm = () => {
   const nombre = document.getElementById("nombre").value;
   const apellido = document.getElementById("apellido").value;
@@ -45,6 +50,12 @@ const validateForm = () => {
   return true;
 };
 
+/**
+ * Formatea un precio a la moneda argentina (ARS).
+ * @method formatPrice
+ * @param {number} price - El precio a formatear.
+ * @returns {string} El precio formateado.
+ */
 const formatPrice = (price) => {
   return new Intl.NumberFormat("es-AR", {
     style: "currency",
@@ -52,6 +63,10 @@ const formatPrice = (price) => {
   }).format(price);
 };
 
+/**
+ * Calcula el precio total de la reserva basado en el número de adultos, niños y noches.
+ * @method calcularprecios
+ */
 const calcularprecios = () => {
   const num1 = document.getElementById("adultos").value;
   const num2 = document.getElementById("niños").value;
@@ -81,6 +96,10 @@ const calcularprecios = () => {
   document.getElementById("totalprecio").value = formatPrice(totalPrecio);
 };
 
+/**
+ * Valida que el campo DNI contenga solo números.
+ * @method ponerdni
+ */
 const ponerdni = () => {
   const dni = document.getElementById("dni").value;
 
@@ -90,6 +109,10 @@ const ponerdni = () => {
   }
 };
 
+/**
+ * Valida que el campo de teléfono contenga solo números.
+ * @method ponertelefono
+ */
 const ponertelefono = () => {
   const numero_de_telefono =
     document.getElementById("numero_de_telefono").value;

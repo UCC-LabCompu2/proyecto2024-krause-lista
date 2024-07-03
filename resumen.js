@@ -1,3 +1,7 @@
+/**
+ * Carga los parámetros de la URL y muestra los detalles de la reserva en un canvas.
+ * @method onload
+ */
 window.onload = () => {
   const params = new URLSearchParams(window.location.search);
 
