@@ -36,7 +36,6 @@ header {
 }
 
 #canvas-container {
-  -moz-box-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
