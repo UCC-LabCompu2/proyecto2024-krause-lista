@@ -122,3 +122,16 @@ const ponertelefono = () => {
     document.getElementById("numero_de_telefono").value = "";
   }
 };
+
+/**
+ * Valida que los campos de nombre y apellido contengan solo letras.
+ * @method validarLetras
+ * @param {Event} event - El evento de entrada.
+ */
+const validarLetras = (event) => {
+  const input = event.target;
+  const nombreRegex = /^[a-zA-Z\s]*$/;
+  if (!nombreRegex.test(input.value)) {
+    input.value = input.value.replace(/[^a-zA-Z\s]/g, "");
+  }
+};

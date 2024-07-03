@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <script defer src="misfunciones.js"></script>
+    <script defer src="validaciones.js"></script>
   </head>
   <body>
     <header>
@@ -48,6 +49,7 @@
           placeholder="Nombre"
           id="nombre"
           required
+          oninput="validarLetras(event)"
         />
       </p>
       <p>
@@ -59,6 +61,7 @@
           placeholder="Apellido"
           id="apellido"
           required
+          oninput="validarLetras(event)"
         />
       </p>
       <p>
