@@ -1,9 +1,9 @@
 /**
  * Valida los datos del formulario de reserva.
- * @method validateForm
+ * @method validacionForma
  * @returns {boolean} False si hay algún error de validación, True en caso contrario.
  */
-const validateForm = () => {
+const validacionForma = () => {
   const nombre = document.getElementById("nombre").value;
   const apellido = document.getElementById("apellido").value;
   const masculino = document.getElementById("masculino").checked;
@@ -52,11 +52,11 @@ const validateForm = () => {
 
 /**
  * Formatea un precio a la moneda argentina (ARS).
- * @method formatPrice
+ * @method formatoprecio
  * @param {number} price - El precio a formatear.
  * @returns {string} El precio formateado.
  */
-const formatPrice = (price) => {
+const formatoPrecio = (price) => {
   return new Intl.NumberFormat("es-AR", {
     style: "currency",
     currency: "ARS",
@@ -93,7 +93,7 @@ const calcularprecios = () => {
 
   const totalPrecio = (adultos * 70000 + niños * 50000) * noches;
 
-  document.getElementById("totalprecio").value = formatPrice(totalPrecio);
+  document.getElementById("totalprecio").value = formatoPrecio(totalPrecio);
 };
 
 /**
